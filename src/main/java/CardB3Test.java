@@ -14,16 +14,16 @@ public class CardB3Test {
     @Test
     public void validatorTest() {
         assertFalse(new CardB3(0, "diamonds").validate());
-        assertFalse(new CardB3(14, "hearts").validate());
+        assertFalse(new CardB3(14, "diamonds").validate());
         assertTrue(new CardB3(1,"clubs").validate());
-        assertTrue(new CardB3(14, "diamonds").validate());
+        assertTrue(new CardB3(14, "hearts").validate());
         assertTrue(new CardB3(9,"spades").validate());
     }
 
     @Test
     public void isHigherTest(){
-        assertTrue(new CardB3(14,"diamonds").isHigher(new CardB3(8, "hearts")));
-        assertTrue(new CardB3(14,"clubs").isHigher(new CardB3(8, "spades")));
+        assertTrue(new CardB3(14,"hearts").isHigher(new CardB3(8, "diamonds")));
+        assertTrue(new CardB3(14,"spades").isHigher(new CardB3(8, "clubs")));
         assertTrue(new CardB3(10,"hearts").isHigher(new CardB3(8, "hearts")));
         assertFalse(new CardB3(13,"hearts").isHigher(new CardB3(13, "diamonds")));
         assertFalse(new CardB3(8,"spades").isHigher(new CardB3(8, "clubs")));

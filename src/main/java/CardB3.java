@@ -49,7 +49,7 @@ public class CardB3 implements Comparable<CardB3>{
 
     /* Джокеры в колоде обычно бывают красными и черными и не привязаны к масти.
     Но чтобы не вводить цвета для джокеров, было принято решение заполнятьь поле suit для них
-    сильной мастью из черных(clubs) и из красных(diamonds).
+    сильной мастью из черных(spades) и из красных(hearts).
      */
     public boolean validate() {
         return (rank > 0 && rank < 14) || (rank == 14 && (suit == Suit.spades || suit == Suit.hearts));
